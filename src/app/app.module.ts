@@ -1,7 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
+// custom modules
+import { WeatherDashboardModule } from './weather-dashboard/weather-dashboard.module';
 
+// components
 import { AppComponent } from './app.component';
 
 
@@ -10,7 +15,13 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    // Angular modules
+    FormsModule,
+    CommonModule,
+    BrowserModule,
+
+    // custom modules
+    WeatherDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
