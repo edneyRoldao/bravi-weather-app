@@ -1,0 +1,20 @@
+<div *ngIf="!weatherCondition && !errorResponse">
+  <h1>Choose a City Name to see its weather information</h1>
+</div>
+
+<div *ngIf="weatherCondition">
+  <h1 style="font-weight: bold; font-size: 30px">{{ weatherCondition.name }} , {{ weatherCondition.sys.country }}</h1>
+  <h1 style="font-weight: bold; font-size: 20px">
+    Temperature: {{ weatherCondition.main.temp }} &#x2103;
+  </h1>
+  <h1 style="font-weight: bold; font-size: 20px">
+    Humidity: {{ weatherCondition.main.humidity }} %
+  </h1>
+  <h1 style="font-weight: bold; font-size: 20px">
+    Max and Min: {{ weatherCondition.main.temp_max }} &#x2103; - {{ weatherCondition.main.temp_min }} &#x2103;
+  </h1>
+</div>
+
+<div *ngIf="errorResponse && errorResponse.status === 404 && !weatherCondition">
+  <h1> City not found </h1>
+</div>
